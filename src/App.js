@@ -23,6 +23,7 @@ function Logo() {
 function Form() {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [items,setItems] = useState();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -66,7 +67,7 @@ function PackingList() {
           <Item item={item} />
         ))}
       </ul>
-    </div>
+    </div> 
   );
 }
 function Item({ item }) {
