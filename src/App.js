@@ -86,6 +86,9 @@ function PackingList({ items, onDeleteItem,onToggleItem }) {
   );
 }
 function Item({ item, onDeleteItem,onToggleItem }) {
+  
+  
+  
   return (
     <li>
       <input type="checkbox" value={item.packed} onChange={() => onToggleItem(item.id)} />
@@ -101,6 +104,10 @@ function Stats({items}) {
   const numItems = items.length
   const numPacked = items.filter(item=>item.packed).length
   const percentage = Math.round((numPacked / numItems) * 100)
+  if(!items.length){
+    return <p className="stats"><em>Start Adding some items to your packing list</em></p>
+  }
+    
   return (
     <footer className="stats">
       <em>
