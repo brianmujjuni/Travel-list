@@ -82,13 +82,17 @@ function PackingList({ items, onDeleteItem,onToggleItem }) {
           <Item item={item} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} />
         ))}
       </ul>
+      <div className="actions">
+        <select>
+          <option value='input'>Sort by input order</option>
+          <option value='description'>Sort by description</option>
+          <option>Sort by packed status</option>
+        </select>
+      </div>
     </div>
   );
 }
 function Item({ item, onDeleteItem,onToggleItem }) {
-  
-  
-  
   return (
     <li>
       <input type="checkbox" value={item.packed} onChange={() => onToggleItem(item.id)} />
